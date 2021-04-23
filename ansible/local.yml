@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install packages
+    become: true
+    become_user: root
+    dnf:
+      state: latest
+      name:
+        - terminator
+        - git
